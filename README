@@ -1,1 +1,11 @@
 mrd-lib is a repository of Emacs Lisp code that I use.
+
+mrd-url and mrd-org-cmd are loosely based on org-protocol, but simpler
+and using a more (IMO) structured URI scheme.  To enable it on Ubuntu,
+use:
+
+    gconftool-2 -s /desktop/gnome/url-handlers/mrd-org-cmd/command '/path/to/mrd-url-open %s' --type String
+    gconftool-2 -s /desktop/gnome/url-handlers/mrd-org-cmd/enabled --type Boolean true
+
+mrd-org-smartwrap is an extension to make visual-line-mode work better
+with org-mode.
