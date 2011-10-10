@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import sys
+import os
+
+def encode(s):
+  return '"' + ''.join('\\%03o' % ord(c) for c in s) + '"'
+
+args = ['emacsclient', '-ne', '(mrd-url-open \'(%s))' % ' '.join(map(encode, sys.argv[1:]))]
+
+os.execvp(args[0], args)
